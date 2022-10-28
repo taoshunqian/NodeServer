@@ -1,22 +1,26 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 const app = express();
+const port = 8099;
 const router = require("./router/router");
-const Create = require('./mysql/createMysql')
+require("dotenv").config({path:".env"}); // 读取配置文件
 
-let dotenv = require("dotenv");
-dotenv.config("./env");
-//  检测数据库
-Create.create()
-
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public')); // 加载html
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
-app.use("/",router);
+app.use(cors()); // 跨域
+app.use("/api", router); // api
 
 
-app.listen(8099, function () {
+// 处理错误问题
+app.get('*', function (req, res, next) {
+	res.sendFile(__dirname+"/public/"+"404.html");
+});
+
+// 端口创建
+app.listen(port, function () {
 	console.log('http://localhost:8099/')
-})
+});

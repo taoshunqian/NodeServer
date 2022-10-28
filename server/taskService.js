@@ -2,7 +2,7 @@ var Sql = require('../mysql/sql');
 var RedisClient = require("../redis/index");
 
 async function queryTaskList(req, res) {
-    let data = await Sql("select * from no_role");
+    let data = await Sql("select * from node_user_role");
     res.json(data)
 }
 
