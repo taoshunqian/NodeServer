@@ -20,7 +20,13 @@ app.get('*', function (req, res, next) {
 	res.sendFile(__dirname+"/public/"+"404.html");
 });
 
+app.post('*', function (req, res, next) {
+	res.status(500).json({"code":500,msg:"请求有误"});
+});
+
 // 端口创建
 app.listen(port, function () {
 	console.log('http://localhost:8099/')
 });
+
+

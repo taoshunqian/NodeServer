@@ -165,5 +165,4 @@ module.exports = {
     getIframe,
     getArticle,
     getGirl,
-    // addTest
 }
