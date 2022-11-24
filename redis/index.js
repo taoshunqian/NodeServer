@@ -6,9 +6,9 @@ const DATADB = require('../config');
 var RedisClient;
 
 try {
-  // RedisClient = redis.createClient(DATADB.redis.port, DATADB.redis.host, {
-  //   password: DATADB.redis.passwd
-  // });
+  RedisClient = redis.createClient(DATADB.redis.port, DATADB.redis.host, {
+    password: DATADB.redis.passwd
+  });
 } catch (error) {
   console.log(error);
 }
