@@ -4,6 +4,7 @@ module.exports = function statusCode(code,obj) {
         case 200:
             data = {
                 code: 200,
+                msg: "成功",
                 data: obj
             }
             break;

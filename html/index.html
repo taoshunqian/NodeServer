@@ -8,24 +8,28 @@
     <title>Document</title>
     <script src="./jquery-1.9.1.min.js"></script>
 </head>
-
+<h1>test</h1>
+<img src="../avatar2.jpg" alt="">
 <body>
     <script>
         function jquery(reqData) {
             $.ajax({
                 type: "POST",
-                url: 'http://localhost:8099/api/login',
+                url: 'http://localhost:8070/api/getRoleRouter',
                 dataType:"json", 
                 data: reqData,
+                timeout: 20*1000,
                 success: function (data) {
                     console.log(data)
                 },
                 error: function (jqXHR) {
-                    console.log()
+                    // console.log()
                 }
             });
         }
-        jquery({userName: "hello"});
+
+        jquery({roleId: 1})
+        
     </script>
 </body>
 

@@ -7,6 +7,11 @@ function isEmpty(error) {
         (typeof error == "string" && error.trim().length === 0)
 }
 
+
+function validatorInt(num) {
+    return validator.isInt(num)
+}
+
 function validatorLoginInput(data) {
     let error = {};
     if (!validator.isLength(data.password, { min: 6, max: 30 })) {
@@ -22,5 +27,6 @@ function validatorLoginInput(data) {
 }
 
 module.exports = {
-    validatorLoginInput
+    validatorLoginInput,
+    validatorInt
 }

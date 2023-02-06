@@ -4,7 +4,7 @@ module.exports = DATADB = {
         user: "root",
         password: "123456",
         port: 3306,
-        database: "tao",
+        database: "env",
     },
     redis: {
         port: 6379,

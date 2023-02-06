@@ -1,8 +1,11 @@
 var Sql = require('../mysql/sql');
 var RedisClient = require("../redis/index");
 
+
+
+
 async function queryTaskList(req, res) {
-    let data = await Sql("select * from node_user_role");
+    let data = await Sql("select * from node_backstage_role_router");
     res.json(data)
 }
 
@@ -69,9 +72,6 @@ async function addLabel(req, res) {
     })
 }
 var num = 0;
-
-
-
 
 module.exports = {
     queryTaskList,
